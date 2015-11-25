@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Juego condicion="tablero.matriz[0][0].jugador= tablero.matriz[0][1].jugador and tablero.matriz[0][0].jugador= tablero.matriz[0][2].jugador or
-tablero.matriz[1][0].jugador= tablero.matriz[1][1].jugador and tablero.matriz[1][0].jugador= tablero.matriz[1][2].jugador or
-tablero.matriz[2][0].jugador= tablero.matriz[2][1].jugador and tablero.matriz[2][0].jugador= tablero.matriz[2][2].jugador or
-tablero.matriz[0][0].jugador= tablero.matriz[1][0].jugador and tablero.matriz[0][0].jugador= tablero.matriz[2][0].jugador or
-tablero.matriz[0][1].jugador= tablero.matriz[1][1].jugador and tablero.matriz[0][1].jugador= tablero.matriz[2][1].jugador or
-tablero.matriz[0][2].jugador= tablero.matriz[1][2].jugador and tablero.matriz[0][2].jugador= tablero.matriz[2][2].jugador or
-tablero.matriz[0][0].jugador= tablero.matriz[1][1].jugador and tablero.matriz[0][0].jugador= tablero.matriz[2][2].jugador or 
-tablero.matriz[0][2].jugador= tablero.matriz[1][1].jugador and tablero.matriz[0][2].jugador= tablero.matriz[2][0].jugador">
-	<Tablero x=2 y=2>
-	<Piezas>
-	<Pieza/>
-	</Piezas>
+<Juego condicion="tablero.matriz[0][0].jugador == tablero.matriz[0][1].jugador and tablero.matriz[0][0].jugador == tablero.matriz[0][2].jugador or
+tablero.matriz[1][0].jugador == tablero.matriz[1][1].jugador and tablero.matriz[1][0].jugador == tablero.matriz[1][2].jugador or
+tablero.matriz[2][0].jugador == tablero.matriz[2][1].jugador and tablero.matriz[2][0].jugador == tablero.matriz[2][2].jugador or
+tablero.matriz[0][0].jugador == tablero.matriz[1][0].jugador and tablero.matriz[0][0].jugador == tablero.matriz[2][0].jugador or
+tablero.matriz[0][1].jugador == tablero.matriz[1][1].jugador and tablero.matriz[0][1].jugador == tablero.matriz[2][1].jugador or
+tablero.matriz[0][2].jugador == tablero.matriz[1][2].jugador and tablero.matriz[0][2].jugador == tablero.matriz[2][2].jugador or
+tablero.matriz[0][0].jugador == tablero.matriz[1][1].jugador and tablero.matriz[0][0].jugador == tablero.matriz[2][2].jugador or 
+tablero.matriz[0][2].jugador == tablero.matriz[1][1].jugador and tablero.matriz[0][2].jugador == tablero.matriz[2][0].jugador">
+	<Tablero >
+		<Piezas>
+		<Pieza/>
+		</Piezas>
 	</Tablero>
 	<Piezas>
-	<Pieza tipo= ficha>
+	<Pieza "tipo= "ficha""/>
 	<Caracteres>
 	[x,o]
 	</Caracteres>
 	<Movimientos>
-	[0,0]
+	<Coordenada x=0 y=0>
 	</Movimientos>
 	</Pieza>	
 	</Piezas>
