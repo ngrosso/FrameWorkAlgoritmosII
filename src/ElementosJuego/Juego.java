@@ -1,10 +1,11 @@
 package ElementosJuego;
 
+
 public class Juego
 {	
 	public Tablero tablero;
 	public String chequearVictoria;
-	public Pieza[] piezas;
+	public Pieza[] piezasParaCopiar;
 	
 	public void setTablero(Tablero tablero)
 	{
@@ -23,12 +24,12 @@ public class Juego
 
 	public Pieza[] getPiezas()
 	{
-		return piezas;
+		return piezasParaCopiar;
 	}
 
-	public void setPiezas(Pieza[] piezas)
+	public void setPiezas(Pieza[] piezasParaCopiar)
 	{
-		this.piezas=piezas;
+		this.piezasParaCopiar=piezasParaCopiar;
 	}
 
 	public Tablero getTablero()
