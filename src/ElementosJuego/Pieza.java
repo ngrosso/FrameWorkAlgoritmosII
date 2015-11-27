@@ -1,7 +1,12 @@
 package ElementosJuego;
 
-import Common.Coordenadas;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 
+import Common.Coordenadas;
+@XmlAccessorType(XmlAccessType.NONE)
 public class Pieza{
 	public String nombre;
 	public char[] caracterParaPrintear;
@@ -9,34 +14,44 @@ public class Pieza{
 	public int jugador;
 	
 	
-	public Pieza(String nom,char[] caracter,Coordenadas[] movimientos,int player){
-		nombre=nom;
-		caracterParaPrintear=caracter;
-		movimientosValidos=movimientos;
-		jugador=player;
+
+	public Pieza()
+	{
 	}
-	public Pieza(String nom,char[] caracter,Coordenadas[] movimientos){
-		nombre=nom;
-		caracterParaPrintear=caracter;
-		movimientosValidos=movimientos;
+
+	public Pieza(String nombre,char[] caracterParaPrintear,Coordenadas[] movimientosValidos,int jugador)
+	{
+		this.nombre=nombre;
+		this.caracterParaPrintear=caracterParaPrintear;
+		this.movimientosValidos=movimientosValidos;
+		this.jugador=jugador;
 	}
+	
+	public Pieza(String nombre,char[] caracterParaPrintear,Coordenadas[] movimientosValidos)
+	{
+		this.nombre=nombre;
+		this.caracterParaPrintear=caracterParaPrintear;
+		this.movimientosValidos=movimientosValidos;
+	}
+
 	public Pieza clonar(){
 		Pieza pieza= new Pieza(getNombre(),getCaracterParaPrintear(),getMovimientosValidos(),getJugador());
 		return pieza;
 	}
 	public char caracterPieza(){
-		return caracterParaPrintear[jugador];
+		return caracterParaPrintear[jugador-1];
 	}
 	public boolean validarMovimiento(int xcoor,int ycoor){
 
 		for (int i=0; i< movimientosValidos.length;i++){
 			if (movimientosValidos[i].x == xcoor & 
-					movimientosValidos[i].y == ycoor) {
-				return true;
+				movimientosValidos[i].y == ycoor) {
+			return true;
 			}
 		}
 		return false;
 	}
+	@XmlAttribute
 	public String getNombre()
 	{
 		return nombre;
@@ -45,6 +60,7 @@ public class Pieza{
 	{
 		this.nombre=nombre;
 	}
+	@XmlElement
 	public char[] getCaracterParaPrintear()
 	{
 		return caracterParaPrintear;
@@ -53,6 +69,7 @@ public class Pieza{
 	{
 		this.caracterParaPrintear=caracterParaPrintear;
 	}
+	@XmlElement
 	public Coordenadas[] getMovimientosValidos()
 	{
 		return movimientosValidos;
@@ -61,6 +78,7 @@ public class Pieza{
 	{
 		this.movimientosValidos=movimientosValidos;
 	}
+	@XmlAttribute
 	public int getJugador()
 	{
 		return jugador;
