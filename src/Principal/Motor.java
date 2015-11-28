@@ -116,8 +116,9 @@ public void correrJuego(){
 							}
 						}
 					}else{
-						System.out.print(" |");
+						System.out.print(" ");
 					}
+					System.out.print("|");
 				}
 				System.out.println("");
 				for(i=0;i<getJuego().getTablero().getCasilleros().length;i++){
@@ -125,7 +126,10 @@ public void correrJuego(){
 				}
 				System.out.println("");
 			}
-			Eval.xy(getJuego(),turno,getJuego().getChequearVictoria());
+			if((boolean)Eval.xy(getJuego(),turno,getJuego().getChequearVictoria())){
+				System.out.println("gano jugador" + turno);
+				
+			}
 			if (turno==1){
 				turno =2;
 			}else{
