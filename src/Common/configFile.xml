@@ -1,46 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <juego>
-    <chequearVictoria>x.getTablero().getCasilleros()[0][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[0][1].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[0][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[0][2].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[1][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][1].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[1][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][2].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[2][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][1].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[2][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][2].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[0][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][0].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[0][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][0].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[0][1].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][1].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[0][1].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][1].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[0][2].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][2].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[0][2].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][2].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[0][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][1].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[0][0].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][2].getPiezas()[y].getJugador||x.getTablero().getCasilleros()[0][2].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[1][1].getPiezas()[y].getJugador &amp;&amp; x.getTablero().getCasilleros()[0][2].getPiezas()[y].getJugador == x.getTablero().getCasilleros()[2][0].getPiezas()[y].getJugador</chequearVictoria>
-    <piezas nombre="ficha">
+    <chequearVictoria>if (x.getTablero().getCasilleros()[0][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[0][1].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[0][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[0][2].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[1][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][1].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[1][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][2].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[2][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][1].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[2][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][2].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[0][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][0].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[0][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][0].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[0][1].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][1].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[0][1].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][1].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[0][2].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][2].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[0][2].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][2].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[0][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][1].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[0][0].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][2].getPiezas()[0].getJugador()||x.getTablero().getCasilleros()[0][2].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[1][1].getPiezas()[0].getJugador() &amp;&amp; x.getTablero().getCasilleros()[0][2].getPiezas()[0].getJugador() == x.getTablero().getCasilleros()[2][0].getPiezas()[0].getJugador()){return true}else{return false}</chequearVictoria>
+    <piezasParaCopiar nombre="ficha">
         <caracterParaPrintear>120</caracterParaPrintear>
         <caracterParaPrintear>111</caracterParaPrintear>
         <movimientosValidos x="0" y="0"/>
-    </piezas>
+    </piezasParaCopiar>
     <tablero>
         <casilleros>
             <item>
             <piezas/>
-            </item>
-            <item>
+            <piezas/>
             <piezas/>
             </item>
             <item>
             <piezas/>
-            </item>
-        </casilleros>
-        <casilleros>
-            <item>
+            <piezas/>
             <piezas/>
             </item>
             <item>
             <piezas/>
-            </item>
-            <item>
+            <piezas/>
             <piezas/>
             </item>
         </casilleros>
         <casilleros>
             <item>
             <piezas/>
-            </item>
-            <item>
+            <piezas/>
             <piezas/>
             </item>
             <item>
+            <piezas/>
+            <piezas/>
+            <piezas/>
+            </item>
+            <item>
+            <piezas/>
+            <piezas/>
             <piezas/>
             </item>
         </casilleros>
-        <codigoColocacion>if (z.getTablero().getCasilleros()[x.getX()][x.getY()].getPiezas()[0] == null){z.getTablero.getCasilleros[x.getX()][x.getY()]setPiezas(z.getPiezas[0].clonar().setJugador(y));}</codigoColocacion>
+        <casilleros>
+            <item>
+            <piezas/>
+            <piezas/>
+            <piezas/>
+            </item>
+            <item>
+            <piezas/>
+            <piezas/>
+            <piezas/>
+            </item>
+            <item>
+            <piezas/>
+            <piezas/>
+            <piezas/>
+            </item>
+        </casilleros>
+        <codigoColocacion>def ficha = z.getPiezasParaCopiar()[0].clonar().setJugador(y);if (z.getTablero().getCasilleros()[x.getX()][x.getY()].getPiezas()[0].getNombre() == null){z.getTablero().getCasilleros()[x.getX()][x.getY()].getPiezas().add(0,ficha);return true}else{return false}</codigoColocacion>
         <codigoMovimiento>return false</codigoMovimiento>
     </tablero>
 </juego>

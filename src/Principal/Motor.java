@@ -8,6 +8,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -15,6 +18,7 @@ import javax.xml.bind.Unmarshaller;
 
 import Common.Coordenadas;
 import ElementosJuego.Juego;
+import ElementosJuego.Pieza;
 
 public class Motor{
 public Juego juego;
@@ -44,8 +48,8 @@ public void setJuego(Juego juego)
 
 public void correrJuego(){
 	System.out.println("ingresa 'h' para obtener ayuda");
-	int turno =1;
-	int x,y,z,zz;
+	int turno,x,y,z,zz,i,j,k;
+	turno=1;
 	try
 	{
 		this.inicializarJuego();
@@ -56,12 +60,14 @@ public void correrJuego(){
 		ex.printStackTrace();
 	}
 	while (true){
+		
 		System.out.println("ingresa un comando");
 	    try
 		{
 	    	BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 			String s = bufferRead.readLine();
 			s=s.toLowerCase();
+			Pieza ficha= this.getJuego().getPiezasParaCopiar()[0].clonar();
 			switch (s){
 				case "h":	
 						System.out.println("los comandos no son case sensitive y son los siguientes");
@@ -79,8 +85,13 @@ public void correrJuego(){
 					System.out.println("ingrese el segundo");
 					y = Integer.parseInt(bufferRead.readLine());
 					Coordenadas coordenada=new Coordenadas(x,y);
-					Eval.xyz(coordenada,turno,getJuego(),getJuego().getTablero().getCodigoColocacion());
-					break;
+					if ((boolean)Eval.xyz(coordenada,turno,getJuego(),getJuego().getTablero().getCodigoColocacion())){
+						break;
+					}else{
+						throw new ErrorValidacionTablero("colocacion invalida");
+						
+					}
+					
 				case "mover":
 					System.out.println("ingrese 4 valores para las coordenadas de la pieza y su destino");
 					System.out.println("ingrese el primero");
@@ -94,6 +105,25 @@ public void correrJuego(){
 					juego.getTablero().moverFicha(x,y,z,zz,turno,getJuego());
 					break;
 				
+			}
+			for(i=0;i<getJuego().getTablero().getCasilleros().length;i++){
+				for(j=0;j<getJuego().getTablero().getCasilleros()[i].length;j++){
+					if (getJuego().getTablero().getCasilleros()[i][j].getPiezas()[turno]!=null){
+						for (k=0;k<2;k++){
+							Pieza pieza=getJuego().getTablero().getCasilleros()[i][j].getPiezas()[k];
+							if(pieza.getNombre()!=null){
+							System.out.print(Character.toString(getJuego().getTablero().getCasilleros()[i][j].getPiezas()[k].caracterPieza()));
+							}
+						}
+					}else{
+						System.out.print(" |");
+					}
+				}
+				System.out.println("");
+				for(i=0;i<getJuego().getTablero().getCasilleros().length;i++){
+					System.out.print("---");
+				}
+				System.out.println("");
 			}
 			Eval.xy(getJuego(),turno,getJuego().getChequearVictoria());
 			if (turno==1){
@@ -110,13 +140,13 @@ public void correrJuego(){
 		}
 		catch(ErrorValidacionTablero ex)
 		{
-			// TODO Auto-generated catch block
 			ex.printStackTrace();
+			continue;
 		}
 		catch(ErrorValidacionPieza ex)
 		{
-			// TODO Auto-generated catch block
 			ex.printStackTrace();
+			continue;
 		}
 	    
 	}

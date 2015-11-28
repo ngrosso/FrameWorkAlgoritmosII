@@ -35,7 +35,7 @@ public class Pieza{
 	}
 
 	public Pieza clonar(){
-		Pieza pieza= new Pieza(getNombre(),getCaracterParaPrintear(),getMovimientosValidos(),getJugador());
+		Pieza pieza= new Pieza(getNombre(),getCaracterParaPrintear(),getMovimientosValidos());
 		return pieza;
 	}
 	public char caracterPieza(){

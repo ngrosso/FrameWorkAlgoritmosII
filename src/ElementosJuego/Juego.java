@@ -41,12 +41,12 @@ public class Juego
 		this.chequearVictoria=chequearVictoria;
 	}
 	@XmlElement
-	public Pieza[] getPiezas()
+	public Pieza[] getPiezasParaCopiar()
 	{
 		return piezasParaCopiar;
 	}
 
-	public void setPiezas(Pieza[] piezasParaCopiar)
+	public void setPiezasParaCopiar(Pieza[] piezasParaCopiar)
 	{
 		this.piezasParaCopiar=piezasParaCopiar;
 	}
